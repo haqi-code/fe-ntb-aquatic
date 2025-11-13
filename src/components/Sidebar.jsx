@@ -11,6 +11,7 @@ import {
   Medal,
   FileSpreadsheet,
   ShieldCheck,
+  Timer,
 } from "lucide-react";
 
 export default function Sidebar({ role, onMenuSelect }) {
@@ -19,7 +20,11 @@ export default function Sidebar({ role, onMenuSelect }) {
       {
         title: "Menu",
         items: [
-          { key: "dashboard", label: "Dashboard", icon: <Home size={18} /> },
+          {
+            key: "dashboardAdmin",
+            label: "Dashboard",
+            icon: <Home size={18} />,
+          },
           {
             key: "multiEvent",
             label: "Multi Event",
@@ -70,19 +75,39 @@ export default function Sidebar({ role, onMenuSelect }) {
     ],
     AdminIndependen: [
       {
-        title: "Dashboard",
+        title: "Menu",
         items: [
-          { key: "dashboard", label: "Dashboard", icon: <Home size={18} /> },
+          {
+            key: "dashboardIndependen",
+            label: "Dashboard",
+            icon: <Home size={18} />,
+          },
+          {
+            key: "multiEventIndependen",
+            label: "Multi Event",
+            icon: <Calendar size={18} />,
+          },
+          {
+            key: "eventIndependen",
+            label: "Event",
+            icon: <Calendar size={18} />,
+          },
         ],
       },
       {
-        title: "Data",
+        title: "Master Data",
         items: [
-          { key: "atlet", label: "Data Atlet", icon: <Medal size={18} /> },
           {
-            key: "pelatih",
-            label: "Data Pelatih",
-            icon: <UserCheck size={18} />,
+            key: "atletIndependen",
+            label: "Data Atlet",
+            icon: <Medal size={18} />,
+          },
+
+          { key: "juriIndependen", label: "Juri", icon: <Gavel size={18} /> },
+          {
+            key: "timeKeeperIndependen",
+            label: "Time Keeper",
+            icon: <Timer size={18} />,
           },
         ],
       },
