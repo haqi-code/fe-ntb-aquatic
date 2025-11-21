@@ -1,7 +1,8 @@
+import { Waves } from "lucide-react";
 export default function PendaftaranMultiEventAdminIndependen() {
   return (
-    <>
-      <h1>Pendaftaran</h1>
-    </>
+    <div className="flex items-center justify-center mt-16 py-16 bg-blue-500">
+      <Waves size={80} color="white" />
+    </div>
   );
 }

@@ -149,17 +149,17 @@ export default function Layout({ role }) {
 
   return (
     <div className="flex">
-      
       {!showSidebarEvent && (
         <Sidebar role={role} onMenuSelect={setActiveMenu} />
       )}
       {showSidebarEvent ? (
         <>
-          <SidebarEvent
-            
-            onSelect={setEventMenu}
+          <SidebarEvent onSelect={setEventMenu} />
+          <HeaderDetail
+            role={role}
+            onBack={() => setShowSidebarEvent(false)}
+            eventType={eventType}
           />
-            <HeaderDetail role={role} onBack={() => setShowSidebarEvent(false)} eventType={eventType} />
           <div className="flex-1 bg-gray-50 min-h-screen">
             {renderContent()}
           </div>
