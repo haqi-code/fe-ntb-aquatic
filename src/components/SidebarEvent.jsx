@@ -1,6 +1,6 @@
 import { ArrowLeft, Check } from "lucide-react";
 
-export default function SidebarEvent({ onBack, onSelect }) {
+export default function SidebarEvent({ onSelect }) {
   const menus = [
     { key: "pendaftaran", label: "Pendaftaran" },
     { key: "juknis", label: "Juknis" },
@@ -9,9 +9,7 @@ export default function SidebarEvent({ onBack, onSelect }) {
 
   return (
     <div className="h-screen sticky mt-0 bg-amber-200">
-      <div className="p-3 cursor-pointer" onClick={onBack}>
-        <ArrowLeft size={30} color="grey" />
-      </div>
+   
       <div className="w-1/6 h-[92vh] py-4 px-10 pt-3">
         {menus.map((menu) => (
           <div
