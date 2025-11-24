@@ -1,4 +1,4 @@
-import RingkasanMultiEventAdminIndependen from "./Independen/RingkasanMultiEventAdminIndependen";
+import RingkasanMultiEventAdminIndependen from "./Independen/MultiEvent/RingkasanMultiEventAdminIndependen";
 
 export default function SidebarRingkasan({ role, eventType }) {
   if (role === "Admin") {

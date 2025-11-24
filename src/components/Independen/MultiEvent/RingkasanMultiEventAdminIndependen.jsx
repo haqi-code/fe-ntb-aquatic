@@ -1,5 +1,5 @@
 import { FlagIcon, Users } from "lucide-react";
-import api from "../../utils/api";
+import api from "../../../utils/api";
 import { useEffect, useState } from "react";
 
 export default function RingkasanMultiEventAdminIndependen() {

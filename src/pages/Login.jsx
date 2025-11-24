@@ -29,7 +29,7 @@ export default function Login() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/api/auth/login", {
+      const res = await axios.post("http://43.133.148.170:3005/api/auth/login", {
         email,
         password,
       });

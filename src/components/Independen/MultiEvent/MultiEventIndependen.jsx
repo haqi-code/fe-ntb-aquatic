@@ -6,8 +6,11 @@ export default function MultiEventIndependen() {
   const location = useLocation();
 
   const getActiveMenu = () => {
-    const path = location.pathname.split("/").pop();
-    return path || "semua";
+    const path = location.pathname;
+    if (path.endsWith("/akan-datang")) return "akan-datang";
+    if (path.endsWith("/sedang-berlangsung")) return "sedang-berlangsung";
+    if (path.endsWith("/selesai")) return "selesai";
+    return "semua";
   };
 
   const activeMenu = getActiveMenu();
@@ -35,7 +38,7 @@ export default function MultiEventIndependen() {
         <button
           onClick={() => navigate("akan-datang")}
           className={`text-sm cursor-pointer ${
-            activeMenu === "akanDatang"
+            activeMenu === "akan-datang"
               ? "text-blue-600 border-b-1 border-blue-600"
               : "text-gray-800"
           }`}
@@ -45,7 +48,7 @@ export default function MultiEventIndependen() {
         <button
           onClick={() => navigate("sedang-berlangsung")}
           className={`text-sm cursor-pointer ${
-            activeMenu === "sedangBerlangsung"
+            activeMenu === "sedang-berlangsung"
               ? "text-blue-600 border-b-1 border-blue-600"
               : "text-gray-800"
           }`}

@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import HeaderDetailMultiEventAdminIndependen from "../HeaderDetailMultiEventAdminIndependen";
+import HeaderDetailMultiEventAdminIndependen from "./HeaderDetailMultiEventAdminIndependen";
 import SidebarEvent from "../../SidebarEvent";
 import SidebarRingkasan from "../../SidebarRingkasan";
 
@@ -7,7 +7,7 @@ export default function DetailMultiEventLayout() {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate(-1);
+    navigate("/independen-admin/multi-event-independen");
   };
 
   const handleSelectMenu = (menuKey) => {
