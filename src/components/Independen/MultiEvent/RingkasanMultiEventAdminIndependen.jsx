@@ -25,8 +25,8 @@ export default function RingkasanMultiEventAdminIndependen() {
   }, []);
 
   return (
-    <div className="h-screen w-72 bg-gray-100">
-      <h1 className="mt-24 pl-5 font-bold text-lg">Ini Ringkasan</h1>
+    <div className="h-screen w-72 bg-gray-300">
+      <h1 className="pt-5 pl-5 font-bold text-lg">Ini Ringkasan</h1>
       <div className="px-5 mt-2">
         <div className="flex justify-between py-1 px-3 mb-2 rounded-lg bg-white">
           <Users width={40} />

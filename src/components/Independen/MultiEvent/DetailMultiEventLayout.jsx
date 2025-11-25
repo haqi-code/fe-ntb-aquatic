@@ -23,11 +23,11 @@ export default function DetailMultiEventLayout() {
           <SidebarEvent onSelect={handleSelectMenu} />
         </div>
 
-        <div className="flex-1 p-5 overflow-auto">
+        <div className="flex-1 overflow-auto">
           <Outlet />
         </div>
 
-        <div className="w-[20%] border-l">
+        <div>
           <SidebarRingkasan role="AdminIndependen" eventType="multi" />
         </div>
       </div>

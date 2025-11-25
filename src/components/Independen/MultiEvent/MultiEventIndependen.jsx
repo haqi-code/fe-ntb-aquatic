@@ -40,7 +40,6 @@ export default function MultiEventIndependen() {
         </p>
       </div>
 
-      {/* TAB MENU */}
       <div className="flex gap-7 pt-5 pl-10">
         {["semua", "akan-datang", "sedang-berlangsung", "selesai"].map((menu) => (
           <button
@@ -57,7 +56,6 @@ export default function MultiEventIndependen() {
         ))}
       </div>
 
-      {/* CONTENT */}
       <div className="flex gap-2 p-4">
         {listMultiEvent.map((multiEvent) => (
           <div key={multiEvent.id} className="w-1/3 p-4 gap-20 rounded-md shadow">
