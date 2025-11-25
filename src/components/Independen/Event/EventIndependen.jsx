@@ -1,63 +1,85 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../../../utils/api";
+import Button from "../../Button";
 
 export default function EventIndependen() {
-  const navigate = useNavigate()
-  const location = useLocation()
+  const [activeMenu, setActiveMenu] = useState("semua");
+  const [listEvent, setListEvent] = useState([]);
+  const navigate = useNavigate();
 
-  const getActiveMenu = () => {
-    const path = location.pathname.split("/").pop()
-    return path || "semua"
-  }
+  const fetchData = async () => {
+    try {
+      const endpointMap = {
+        "semua": "/independen-admin/event",
+        "akan-datang": "/independen-admin/event",
+        "sedang-berlangsung": "/independen-admin/event?status=Berlangsung",
+        "selesai": "/independen-admin/event?status=Selesai",
+      };
 
-  const activeMenu = getActiveMenu()
+      const endpoint = endpointMap[activeMenu];
+
+      const res = await api.get(endpoint);
+      setListEvent(res.data.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [activeMenu]);
+
 
   return (
-    <div className="">
+    <div>
       <div className="p-5 border border-gray-600">
-        <h1 className="font-bold text-2xl ">Event</h1>
+        <h1 className="font-bold text-2xl "> Event</h1>
         <p className="text-sm text-gray-600">
-          Lihat event gabungan & jadwal lomba
+          Lihat  event gabungan & jadwal lomba
         </p>
       </div>
 
+      {/* TAB MENU */}
       <div className="flex gap-7 pt-5 pl-10">
-        <button
-          onClick={() => navigate("semua")}
-          className={`text-sm cursor-pointer ${
-            activeMenu === "semua" ? "text-blue-600" : "text-gray-800"
-          }`}
-        >
-          Semua
-        </button>
-        <button
-          onClick={() => navigate("akan-datang")}
-          className={`text-sm cursor-pointer ${
-            activeMenu === "akanDatang" ? "text-blue-600" : "text-gray-800"
-          }`}
-        >
-          Akan Datang
-        </button>
-        <button
-          onClick={() => navigate("sedang-berlangsung")}
-          className={`text-sm cursor-pointer ${
-            activeMenu === "sedangBerlangsung"
-              ? "text-blue-600"
-              : "text-gray-800"
-          }`}
-        >
-          Sedang Berlangsung
-        </button>
-        <button
-          onClick={() => navigate("selesai")}
-          className={`text-sm cursor-pointer ${
-            activeMenu === "selesai" ? "text-blue-600" : "text-gray-800"
-          }`}
-        >
-          Selesai
-        </button>
+        {["semua", "akan-datang", "sedang-berlangsung", "selesai"].map((menu) => (
+          <button
+            key={menu}
+            onClick={() => setActiveMenu(menu)}
+            className={`text-sm cursor-pointer capitalize ${
+              activeMenu === menu
+                ? "text-blue-600 border-b-1 border-blue-600"
+                : "text-gray-800"
+            }`}
+          >
+            {menu.replace("-", " ")}
+          </button>
+        ))}
       </div>
-      <div className="p-4">
-      <Outlet />
+
+      {/* CONTENT */}
+      <div className="flex gap-2 p-4">
+        {listEvent.map((Event) => (
+          <div key={Event.id} className="w-1/3 p-4 gap-20 rounded-md shadow">
+            <h1 className="font-bold">{Event.nama_event}</h1>
+            <p className="text-sm text-blue-500">{Event.tingkat}</p>
+            <p className="text-sm text-gray-600">{Event.deskripsi}</p>
+
+            <div className="flex py-2">
+              <p className="text-sm text-gray-600">{Event.start_date} - </p>
+              <p className="text-sm text-gray-600">{Event.end_date}</p>
+            </div>
+
+            <Button
+              text="Lihat Detail"
+              onClick={() =>
+                navigate(
+                  `/independen-admin/-event-independen/detail/${Event.id}`
+                )
+              }
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
