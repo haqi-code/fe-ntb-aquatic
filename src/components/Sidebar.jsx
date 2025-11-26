@@ -6,6 +6,24 @@ export default function Sidebar({ role }) {
   const location = useLocation(); // untuk set active berdasarkan url
 
   const menus = {
+    Admin: [
+      {
+        title: "Menu",
+        items: [
+          { key: "", label: "Dashboard", path: "/admin", icon: <Home size={18} /> },
+          { key: "multiEventIndependen", label: "Multi Event", path: "/independen-admin/multi-event-independen", icon: <Calendar size={18} /> },
+          { key: "eventIndependen", label: "Event", path: "/independen-admin/event", icon: <ClipboardList size={18} /> },
+        ],
+      },
+      {
+        title: "Master Data",
+        items: [
+          { key: "atletIndependen", label: "Atlet", path: "/independen-admin/atlet", icon: <Medal size={18} /> },
+          { key: "timeKeeperIndependen", label: "Time Keeper", path: "/independen-admin/time-keeper", icon: <Gavel size={18} /> },
+        ],
+      },
+    ],
+  };
     IndependenAdmin: [
       {
         title: "Menu",

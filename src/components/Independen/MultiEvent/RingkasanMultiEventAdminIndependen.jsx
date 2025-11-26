@@ -1,8 +1,11 @@
 import { FlagIcon, Users } from "lucide-react";
 import api from "../../../utils/api";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function RingkasanMultiEventAdminIndependen() {
+  const { id } = useParams();
+
   const [statistik, setStatistik] = useState({
     peserta_terdaftar: 0,
     pertandingan_selesai: 0,
@@ -21,8 +24,8 @@ export default function RingkasanMultiEventAdminIndependen() {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData(id);
+  }, [id]);
 
   return (
     <div className="h-screen w-72 bg-gray-300">

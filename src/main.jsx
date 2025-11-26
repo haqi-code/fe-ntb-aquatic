@@ -5,6 +5,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import IndependenAdminRoutes from "./routes/IndependenAdminRoutes";
+import AdminRoutes from "./routes/AdminRoutes";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="*" element={<NotFound />} />
 
         {IndependenAdminRoutes()}
+        {AdminRoutes()}
       </Routes>
     </BrowserRouter>
   </StrictMode>

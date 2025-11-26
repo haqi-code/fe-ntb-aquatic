@@ -22,19 +22,12 @@ export default function IndependenAdminRoutes() {
       }
     >
       <Route index element={<DashboardIndependen />} />
-
-      <Route path="multi-event-independen" element={<MultiEventIndependen />}>
-       
-      </Route>
-
-      <Route path="event-independen" element={<EventIndependen />}>
-      </Route>
-      
+      <Route path="multi-event-independen" element={<MultiEventIndependen />} />
+      <Route path="event-independen" element={<EventIndependen />} />
       <Route path="event" element={<EventIndependen />} />
       <Route path="atlet" element={<AtletIndependen />} />
       <Route path="time-keeper" element={<TimeKeeperIndependen />} />
       
-
       <Route path="multi-event-independen/detail/:id" element={ <DetailMultiEventLayout /> }>
         <Route index element={<PendaftaranMultiEventAdminIndependen />} />
         <Route path="pendaftaran" element={<PendaftaranMultiEventAdminIndependen />} />

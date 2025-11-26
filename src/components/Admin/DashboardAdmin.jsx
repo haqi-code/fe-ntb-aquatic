@@ -1,6 +1,6 @@
 import { RefreshCw, Users } from "lucide-react";
 import { useEffect, useState } from "react";
-import api from "../utils/api";
+import api from "../../utils/api";
 
 export default function DashboardAdmin() {
   const [stats, setStats] = useState({
