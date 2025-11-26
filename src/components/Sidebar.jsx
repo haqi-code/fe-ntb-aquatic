@@ -11,19 +11,18 @@ export default function Sidebar({ role }) {
         title: "Menu",
         items: [
           { key: "", label: "Dashboard", path: "/admin", icon: <Home size={18} /> },
-          { key: "multiEventIndependen", label: "Multi Event", path: "/independen-admin/multi-event-independen", icon: <Calendar size={18} /> },
-          { key: "eventIndependen", label: "Event", path: "/independen-admin/event", icon: <ClipboardList size={18} /> },
+          { key: "multiEventAdmin", label: "Multi Event", path: "multi-event", icon: <Calendar size={18} /> },
+          { key: "eventAdmin", label: "Event", path: "admin/event", icon: <ClipboardList size={18} /> },
         ],
       },
       {
         title: "Master Data",
         items: [
-          { key: "atletIndependen", label: "Atlet", path: "/independen-admin/atlet", icon: <Medal size={18} /> },
-          { key: "timeKeeperIndependen", label: "Time Keeper", path: "/independen-admin/time-keeper", icon: <Gavel size={18} /> },
+          { key: "atletAdmin", label: "Atlet", path: "admin/atlet", icon: <Medal size={18} /> },
+          { key: "timeKeeperAdmin", label: "Time Keeper", path: "admin/time-keeper", icon: <Gavel size={18} /> },
         ],
       },
     ],
-  };
     IndependenAdmin: [
       {
         title: "Menu",
