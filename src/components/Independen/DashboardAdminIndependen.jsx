@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../utils/api";
 import { RefreshCw, Users } from "lucide-react";
 
-export default function DashboardIndependen() {
+export default function DashboardAdminIndependen() {
   const [statistik, setStatistik] = useState({
     total_atlet: 0,
   });

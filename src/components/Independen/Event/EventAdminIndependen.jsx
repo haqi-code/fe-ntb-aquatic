@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../../../utils/api";
 import Button from "../../Button";
 
-export default function EventIndependen() {
+export default function EventAdminIndependen() {
   const [activeMenu, setActiveMenu] = useState("semua");
   const [listEvent, setListEvent] = useState([]);
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-export default function EventBerlangsungIndependen() {
+export default function EventAkanDatangAdminIndependen() {
   return (
     <div className="p-4">
       <div className="w-1/3 p-4 rounded-md shadow">

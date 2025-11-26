@@ -1,9 +1,9 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import HeaderDetailMultiEventAdminIndependen from "../../HeaderDetailEvent";
 import SidebarEvent from "../../SidebarEvent";
 import SidebarRingkasan from "../../SidebarRingkasan";
+import HeaderDetailMultiEventAdminIndependen from "./HeaderDetailMultiEventAdminIndependen";
 
-export default function DetailMultiEventLayout() {
+export default function DetailMultiEvenAdminIndependentLayout() {
   const navigate = useNavigate();
 
   const handleBack = () => {

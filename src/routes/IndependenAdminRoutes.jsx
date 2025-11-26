@@ -1,15 +1,15 @@
 import { Route } from "react-router-dom";
 import ProtectedRouted from "../utils/protectedRoute";
 import IndependenAdminLayout from "../Layout/IndependenAdminLayout";
-import DashboardIndependen from "../components/Independen/DashboardIndependen";
-import MultiEventIndependen from "../components/Independen/MultiEvent/MultiEventIndependen";
-import AtletIndependen from "../components/Independen/AtletIndependen";
-import TimeKeeperIndependen from "../components/Independen/TimeKeeperIndependen";
+import TimeKeeperAdminIndependen from "../components/Independen/TimeKeeperAdminIndependen";
 import PendaftaranMultiEventAdminIndependen from "../components/Independen/MultiEvent/DetailMultiEvent/PendaftaranMultiEventAdminIndependen";
 import JuknisMultiEventAdminIndependen from "../components/Independen/MultiEvent/DetailMultiEvent/JuknisMultiEventAdminIndependen";
 import LombaMultiEventAdminIndependen from "../components/Independen/MultiEvent/DetailMultiEvent/LombaMultiEventAdminIndependen";
-import DetailMultiEventLayout from "../components/Independen/MultiEvent/DetailMultiEventLayout";
-import EventIndependen from "../components/Independen/Event/EventIndependen";
+import MultiEventAdminIndependen from "../components/Independen/MultiEvent/MultiEventAdminIndependen";
+import AtletAdminIndependen from "../components/Independen/AtletAdminIndependen";
+import EventAdminIndependen from "../components/Independen/Event/EventAdminIndependen";
+import DashboardAdminIndependen from "../components/Independen/DashboardAdminIndependen";
+import DetailMultiEvenAdminIndependentLayout from "../components/Independen/MultiEvent/DetailMultiEvenAdminIndependentLayout";
 
 export default function IndependenAdminRoutes() {
   return (
@@ -21,17 +21,17 @@ export default function IndependenAdminRoutes() {
         </ProtectedRouted>
       }
     >
-      <Route index element={<DashboardIndependen />} />
-      <Route path="multi-event-independen" element={<MultiEventIndependen />} />
-      <Route path="event-independen" element={<EventIndependen />} />
-      <Route path="event" element={<EventIndependen />} />
-      <Route path="atlet" element={<AtletIndependen />} />
-      <Route path="time-keeper" element={<TimeKeeperIndependen />} />
+      <Route index element={<DashboardAdminIndependen />} />
+      <Route path="multi-event-independen" element={<MultiEventAdminIndependen />} />
+      <Route path="event-independen" element={<EventAdminIndependen />} />
+      <Route path="event" element={<EventAdminIndependen />} />
+      <Route path="atlet" element={<AtletAdminIndependen />} />
+      <Route path="time-keeper" element={<TimeKeeperAdminIndependen />} />
       
-      <Route path="multi-event-independen/detail/:id" element={ <DetailMultiEventLayout /> }>
+      <Route path="multi-event-independen/detail/:id" element={ <DetailMultiEvenAdminIndependentLayout /> }>
         <Route index element={<PendaftaranMultiEventAdminIndependen />} />
         <Route path="pendaftaran" element={<PendaftaranMultiEventAdminIndependen />} />
-        <Route path="juknis" element={<JuknisMultiEventAdminIndependen />} />
+        <Route path="juknis" element={<JuknisMultiEventAdminIndependen  />} />
         <Route path="lomba" element={<LombaMultiEventAdminIndependen />} />
       </Route>
     </Route>

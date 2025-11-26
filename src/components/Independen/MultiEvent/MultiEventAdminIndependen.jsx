@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../../../utils/api";
 import Button from "../../Button";
 
-export default function MultiEventIndependen() {
+export default function MultiEventAdminIndependen() {
   const [activeMenu, setActiveMenu] = useState("semua");
   const [listMultiEvent, setListMultiEvent] = useState([]);
   const navigate = useNavigate();

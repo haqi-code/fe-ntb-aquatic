@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../utils/api";
 import Button from "../Button";
 
-export default function JuriIndependen() {
+export default function JuriAdminIndependen() {
   const [judges, setJudges] = useState([]);
 
   const fetchData = async () => {

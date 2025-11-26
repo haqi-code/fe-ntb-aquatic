@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../utils/api";
 
-export default function TimeKeeperIndependen() {
+export default function TimeKeeperAdminIndependen() {
   const [listTimeKeeper, setListTimeKeeper] = useState([]);
 
   const fetchData = async () => {

@@ -3,7 +3,7 @@ import Button from "../Button";
 import FormLayout from "../FormLayout";
 import api from "../../utils/api";
 
-export default function AtletIndependen() {
+export default function AtletAdminIndependen() {
   const fields = [
     {
       id: "full_name",
